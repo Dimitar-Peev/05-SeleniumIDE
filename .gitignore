@@ -3,3 +3,5 @@ bin/
 obj/
 SeleniumIDE/bin/
 SeleniumIDE/obj/
+.vs/
+*.user
