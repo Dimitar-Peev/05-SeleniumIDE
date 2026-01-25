@@ -38,7 +38,11 @@ pipeline {
         always {
             echo 'Pipeline completed'
 			
-           junit '**/test_results.trx'
+            // Archive the raw .trx test result for inspection
+            archiveArtifacts artifacts: 'TestResults/*.trx', fingerprint: true
+
+            // Optional: If you install and use trx2junit, convert to XML and use:
+            // junit 'TestResults/*.xml'
 
             cleanWs()
         }
